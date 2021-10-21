@@ -21,6 +21,7 @@ def main():
       enclave.print(html[:200])
 
       pw = enclave.user_input("Gimme ya password")
+      enclave.print(f"HAHA! Your password is {pw}."
       enclave.submit(html[:200], pw, types=("string", "string"))
 
 
