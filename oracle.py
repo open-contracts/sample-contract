@@ -20,8 +20,8 @@ with opencontracts.enclave_backend() as enclave:
   html = enclave.interactive_session(url='en.wikipedia.org', instructions="Do the thing then push the button.", tcp_port=14500)
   enclave.print(html[:200])
 
-  pw = enclave.user_input("Gimme ya password")
-  enclave.print(f"HAHA! Your password is {pw}.")
-  enclave.submit(html[:200], pw, types=("string", "string"))
+  key = enclave.user_input("Please enter your website.com API key")
+  enclave.print(f"API key received: {key}")
+  enclave.submit(html[:200], pw, types=("string", "string"), function_name="submitStrings")
 
 
