@@ -22,6 +22,6 @@ with opencontracts.enclave_backend() as enclave:
 
   key = enclave.user_input("Please enter your website.com API key")
   enclave.print(f"API key received: {key}")
-  enclave.submit(html[:200], pw, types=("string", "string"), function_name="submitStrings")
+  enclave.submit(html[:200], key, types=("string", "string"), function_name="submitStrings")
 
 
