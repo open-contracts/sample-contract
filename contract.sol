@@ -1,17 +1,17 @@
-pragma solidity ^0.8.3;
-import "@opencontracts/contracts/OpenContractAlpha.sol"
+pragma solidity ^0.8.0;
+import "https://github.com/open-contracts/protocol/blob/main/solidity_contracts/OpenContractAlpha.sol";
 
-contract ExampleContract is OpenContractAlpha("e6295f30c2eb24805ed2a1568935a2db73e0d33e26b2a12a84fbad908251b458") {
+contract ExampleContract is OpenContractAlpha {
     
-    string enclaveStorage;
-    string userStorage;
+    string public stringStorage;
     
-    function saveFromEnclave (bytes32 oracleHash, string memory someString) public {
-        requireOracle(oracleHash);
-        enclaveStorage = someString;
+    constructor() OpenContractAlpha(0xcD74359aDE16d5aAba79b05bc5750c5817993feA) {
+        
     }
-
-    function saveFromUser (string memory someString) public {
-        userStorage = someString;
+    
+    function saveFromEnclaveOnly (bytes32 oracleHash, address msgSender, string memory someString)
+    public onlyOracle(oracleHash, 0x78ec6a41af8657793af05c1b88226a934f56e10ef3fefac944849cd7226baea1) {
+        stringStorage = someString;
     }
+    
 }
