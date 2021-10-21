@@ -15,15 +15,15 @@ def main():
         html = f.read().decode('utf-8')
         enclave.print(html[:400])
 
-      # sign the data using the enclave public key, for verification in solidity
-      signature = enclave.sign(html[:400].encode(), types=("bytes",))
-      enclave.print(signature)
-
       # starts an interactive chrome session at http://<EC2_IP>:14500
       # (en.wikipedia.org is still the only open domain)
       html = enclave.interactive_session(url='en.wikipedia.org', instructions="Do the thing then push the button.", tcp_port=14500)
-      enclave.print(html[:400])
+      enclave.print(html[:200])
+
+      pw = enclave.user_input("Gimme ya password")
+      enclave.submit(html[:200], pw, types=("string", "string"))
+
 
 if __name__ == '__main__':
     main()
-	
+
