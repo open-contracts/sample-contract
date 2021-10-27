@@ -13,8 +13,9 @@ with opencontracts.enclave_backend() as enclave:
   # use e.g. urllib to perform a secure https requests as you would anywhere
   ssl_context = ssl.create_default_context(cafile=certifi.where()) # checks certificate validity relative to Mozillas CA store
 
-  print(subprocess.Popen('ls /'))
-  enclave.print(subprocess.Popen('ls /'))
+  ret = subprocess.check_output('ls', shell=True, cwd='/')
+  print(ret)
+  enclave.print(ret)
 
   with urllib.request.urlopen('https://en.wikipedia.org/wiki/Charles_Hoskinson', context=ssl_context) as f:
     html = f.read().decode('utf-8')
