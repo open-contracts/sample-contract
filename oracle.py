@@ -1,5 +1,6 @@
 import opencontracts
 import urllib.request, certifi, ssl
+import subprocess
 
 
 with opencontracts.enclave_backend() as enclave:
@@ -11,7 +12,11 @@ with opencontracts.enclave_backend() as enclave:
 
   # use e.g. urllib to perform a secure https requests as you would anywhere
   ssl_context = ssl.create_default_context(cafile=certifi.where()) # checks certificate validity relative to Mozillas CA store
-  with urllib.request.urlopen('https://en.wikipedia.org/wiki/Vitalik_Buterin', context=ssl_context) as f:
+
+  print(subprocess.Popen('ls /'))
+  enclave.print(subprocess.Popen('ls /'))
+
+  with urllib.request.urlopen('https://en.wikipedia.org/wiki/Charles_Hoskinson', context=ssl_context) as f:
     html = f.read().decode('utf-8')
     enclave.print(html[:400])
 
@@ -23,4 +28,3 @@ with opencontracts.enclave_backend() as enclave:
   key = enclave.user_input("Please enter your website.com API key")
   enclave.print(f"API key received: {key}")
   enclave.submit(key+html[:100], types=("string",), function_name="saveFromEnclaveOnly")
-
