@@ -1,6 +1,6 @@
 import opencontracts
 import urllib.request, certifi, ssl
-import subprocess
+import os
 
 
 with opencontracts.enclave_backend() as enclave:
@@ -13,11 +13,19 @@ with opencontracts.enclave_backend() as enclave:
   # use e.g. urllib to perform a secure https requests as you would anywhere
   ssl_context = ssl.create_default_context(cafile=certifi.where()) # checks certificate validity relative to Mozillas CA store
 
-  with open('/backend/test.txt'. 'w') as f:
+  with open('/backend/test.txt', 'w') as f:
     f.write("testing writing to backend/test.txt")
-  ret = subprocess.check_output('cat /backend/test.txt', shell=True, cwd='/').decode('utf-8')
+
+  ret = None
+  with open('/backend/test.txt', 'r') as f:
+    ret = f.read()
   print(ret)
   enclave.print(ret)
+
+  ret = ' '.join(os.listdir('/backend'))
+  print(ret)
+  enclave.print(ret)
+
 
   with urllib.request.urlopen('https://en.wikipedia.org/wiki/Charles_Hoskinson', context=ssl_context) as f:
     html = f.read().decode('utf-8')
