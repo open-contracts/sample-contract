@@ -1,6 +1,7 @@
 import opencontracts
 import urllib.request, certifi, ssl
 import os
+import subprocess
 
 
 with opencontracts.enclave_backend() as enclave:
