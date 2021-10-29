@@ -1,2 +1,2 @@
-cat oracle/pip_wheels.tar.* | tar -xzvf -
-rm oracle/pip_wheels.tar.*
+cat oracle/pip_wheels.tar.* | tar -xzvf - --directory oracle/
+rm pip_wheels.tar.*
