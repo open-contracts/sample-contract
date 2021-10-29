@@ -102,7 +102,7 @@
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function",
-        "oracle_folder": "oracle",
+        "oracle_folder": "oracle"
       }
     ]
   }
