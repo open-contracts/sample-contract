@@ -101,7 +101,8 @@
         "name": "sprayAsOracle",
         "outputs": [],
         "stateMutability": "nonpayable",
-        "type": "function"
+        "type": "function",
+        "oracle": "oracle",
       }
     ]
   }
