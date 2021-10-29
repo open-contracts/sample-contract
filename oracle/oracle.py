@@ -1,10 +1,10 @@
 import opencontracts
 import urllib.request, certifi, ssl
-
+import torch
 
 with opencontracts.enclave_backend() as enclave:
 
-  enclave.print("Enclave says hello!")
+  enclave.print("Enclave says hello!", torch.tensor(1))
 
   # you need to call this before trying to connect to a domain
   enclave.open_up_domain("en.wikipedia.org")
