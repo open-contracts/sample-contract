@@ -1,4 +1,5 @@
 {
+  "name": "Graffiti", 
   "network": "ropsten",
   "address": "0x61553610Bd71E8E5Ea57566b6639FFdAcF72D78A",
   "abi": [
