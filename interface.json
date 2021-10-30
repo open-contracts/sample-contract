@@ -53,7 +53,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "description": "Anyone can write here via the 'sprayAsOracle' function."
     },
     {
       "inputs": [],
@@ -66,7 +67,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "description": "Anyone can write here via the 'spray' function."
     },
     {
       "inputs": [
@@ -79,7 +81,8 @@
       "name": "spray",
       "outputs": [],
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "description": "this function allows anyone to spray to the publicWall."
     },
     {
       "inputs": [
@@ -103,7 +106,8 @@
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function",
-      "oracle_folder": "oracle"
+      "oracle_folder": "oracle",
+      "description": "this function allows anyone to spray to the oracleWall, but they have to go through an enclave."
     }
   ]
 }
