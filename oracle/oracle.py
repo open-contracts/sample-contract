@@ -16,11 +16,11 @@ with opencontracts.enclave_backend() as enclave:
   # with open('/backend/test.txt', 'w') as f:
   #   f.write("testing writing to backend/test.txt")
 
-  ret = subprocess.check_output('echo "testing writing to backend/test.txt" > /backend/test.txt', shell=True)
+  # ret = subprocess.check_output('echo "testing writing to backend/test.txt" > /backend/test.txt', shell=True)
   # with open('/backend/test.txt', 'r') as f:
   #   ret = f.read()
-  print(ret)
-  enclave.print(ret)
+  # print(ret)
+  # enclave.print(ret)
 
   # ret = ' '.join(os.listdir('/backend'))
   # print(ret)
