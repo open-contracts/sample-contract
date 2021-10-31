@@ -13,14 +13,14 @@ with opencontracts.enclave_backend() as enclave:
   # use e.g. urllib to perform a secure https requests as you would anywhere
   ssl_context = ssl.create_default_context(cafile=certifi.where()) # checks certificate validity relative to Mozillas CA store
 
-  with open('/backend/test.txt', 'w') as f:
-    f.write("testing writing to backend/test.txt")
+  # with open('/backend/test.txt', 'w') as f:
+  #   f.write("testing writing to backend/test.txt")
 
   # ret = subprocess.check_output('echo "testing writing to backend/test.txt" > /backend/test.txt', shell=True)
-  with open('/backend/test.txt', 'r') as f:
-    ret = f.read()
-  print(ret)
-  enclave.print(ret)
+  # with open('/backend/test.txt', 'r') as f:
+  #   ret = f.read()
+  # print(ret)
+  # enclave.print(ret)
 
   # ret = ' '.join(os.listdir('/backend'))
   # print(ret)
