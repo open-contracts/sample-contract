@@ -1,8 +1,10 @@
+print("about to import")
 import opencontracts
 import urllib.request, certifi, ssl
 import os
 # import subprocess
 
+print("about to enter enclave backend context manager")
 with opencontracts.enclave_backend() as enclave:
 
   enclave.print("Enclave says hello!")
@@ -39,3 +41,4 @@ with opencontracts.enclave_backend() as enclave:
   enclave.print(f"API key received: {key}")
   enclave.submit(key+html[:100], types=("string",), function_name="sprayAsOracle")
 
+print("exited enclave backend context manager")
