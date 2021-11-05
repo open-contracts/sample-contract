@@ -1,6 +1,5 @@
-{
+{ "ropsten" : {
   "name": "Graffiti", 
-  "network": "ropsten",
   "address": "0x61553610Bd71E8E5Ea57566b6639FFdAcF72D78A",
   "onlyDisplayAnnotated": false,
   "abi": [
@@ -55,7 +54,7 @@
       ],
       "stateMutability": "view",
       "type": "function",
-      "annotation": "Anyone can write here via the 'sprayAsOracle' function."
+      "description": "Anyone can write here via the 'sprayAsOracle' function."
     },
     {
       "inputs": [],
@@ -83,7 +82,7 @@
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function",
-      "annotation": "this function allows anyone to spray to the publicWall."
+      "description": "this function allows anyone to spray to the publicWall."
     },
     {
       "inputs": [
@@ -107,8 +106,9 @@
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function",
-      "oracle_folder": "oracle",
-      "annotation": "this function allows anyone to spray to the oracleWall, but they have to go through an enclave."
+      "oracleFolder": "oracle",
+      "description": "this function allows anyone to spray to the oracleWall, but they have to go through an enclave."
     }
   ]
+}
 }
