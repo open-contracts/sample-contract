@@ -1,6 +1,5 @@
-{
+{ "ropsten": {
   "name": "Storage", 
-  "network": "ropsten",
   "address": "0x6fd3c27CBC4917f8d1043eb35DfaF6EdF2EF616C",
   "abi": [
 	{
@@ -82,4 +81,5 @@
 		"type": "function"
 	}
 ]
+}
 }
