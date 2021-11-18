@@ -1,18 +1,48 @@
-pragma solidity ^0.8.0;
-import "https://github.com/open-contracts/protocol/blob/main/solidity_contracts/OpenContractRopsten.sol";
+// SPDX-License-Identifier: GPL-3.0
 
-contract Graffiti is OpenContractAlpha {
+pragma solidity >=0.7.0 <0.9.0;
 
-    string public publicWall;
-    string public oracleWall;
+/**
+ * @title Storage
+ * @dev Store & retrieve value in a variable
+ */
+contract Storage {
 
-    function sprayAsOracle (bytes32 oracleHash, address msgSender, string memory someString)
-    public _oracle(oracleHash, msgSender, this.sprayAsOracle.selector) {
-        oracleWall = someString;
+    uint256 _uint;
+    bool _bool;
+    string _string;
+    
+    /**
+     * @dev Store int value 
+     * @param input value to store
+     */
+    function store_int(uint256 input) public {
+        _uint = input;
+    }
+
+    /**
+     * @dev Store bool value
+     * @param input value to store
+     */
+    function store_bool(bool input) public {
+        _bool = input;
     }
     
-    function spray(string memory someString) public {
-        publicWall = someString;
+    function store_string(string memory input) public {
+        _string = input;
+    }
+
+    function get_int() public view returns(uint256) {
+        return _uint;
+    }
+
+    function get_bool() public view returns(bool) {
+        return _bool;
+    }
+    
+    function get_string() public payable returns(string memory) {
+        require(msg.value > 10, "need to pay at least 10 wei");
+        return _string;
     }
 
 }
