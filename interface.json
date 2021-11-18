@@ -1,113 +1,85 @@
 {
   "name": "Storage", 
   "network": "ropsten",
-  "address": "0x61553610Bd71E8E5Ea57566b6639FFdAcF72D78A",
+  "address": "0x6fd3c27CBC4917f8d1043eb35DfaF6EdF2EF616C",
   "abi": [
-    {
-      "inputs": [
-        {
-          "internalType": "bytes4",
-          "name": "",
-          "type": "bytes4"
-        }
-      ],
-      "name": "_allowedHash",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "_complete_oracles",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "_completed",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "oracleWall",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "annotation": "Anyone can write here via the 'sprayAsOracle' function."
-    },
-    {
-      "inputs": [],
-      "name": "publicWall",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "description": "Anyone can write here via the 'spray' function."
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "someString",
-          "type": "string"
-        }
-      ],
-      "name": "spray",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function",
-      "annotation": "this function allows anyone to spray to the publicWall."
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "oracleHash",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "address",
-          "name": "msgSender",
-          "type": "address"
-        },
-        {
-          "internalType": "string",
-          "name": "someString",
-          "type": "string"
-        }
-      ],
-      "name": "sprayAsOracle",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function",
-      "oracle_folder": "oracle",
-      "annotation": "this function allows anyone to spray to the oracleWall, but they have to go through an enclave."
-    }
-  ]
+	{
+		"inputs": [],
+		"name": "get_bool",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "get_int",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "get_string",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "input",
+				"type": "bool"
+			}
+		],
+		"name": "store_bool",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "input",
+				"type": "uint256"
+			}
+		],
+		"name": "store_int",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "input",
+				"type": "string"
+			}
+		],
+		"name": "store_string",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
 }
